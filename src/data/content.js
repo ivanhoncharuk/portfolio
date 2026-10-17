@@ -10,6 +10,12 @@ export const profile = {
   linkedin: "https://www.linkedin.com/in/ivan-honcharuk-dev",
   github: "https://github.com/ivanhoncharuk",
   available: true,
+  resume: {
+    href: "/resume.pdf",
+    preview: "/resume-preview.webp",
+    pages: 1,
+    updated: "Oct 2026",
+  },
   tagline: [
     "I build web applications, scalable backends and",
     "AI-driven products",

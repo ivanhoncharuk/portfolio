@@ -1,7 +1,64 @@
 import { motion, useReducedMotion } from "motion/react";
-import { ArrowDown, ArrowUpRight, MapPin, Mail } from "lucide-react";
+import { ArrowDown, ArrowUpRight, FileText, MapPin, Mail } from "lucide-react";
 import { Github, Linkedin } from "./BrandIcons";
 import { profile, stats, marquee } from "../data/content";
+
+/** Opens the PDF in a new tab; shows the top of the first page as a preview. */
+function ResumeCard() {
+  const { href, preview, pages, updated } = profile.resume;
+
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noreferrer noopener"
+      aria-label={`Open ${profile.firstName}'s résumé as a PDF in a new tab`}
+      className="card-sheen group relative block overflow-hidden rounded-2xl border border-mist-500/12 bg-ink-900/70 p-4 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1 hover:border-mist-500/25 hover:bg-ink-850/80"
+    >
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -top-20 -right-16 h-44 w-44 rounded-full bg-gradient-to-br from-iris-500/20 to-transparent opacity-0 blur-3xl transition-opacity duration-700 group-hover:opacity-100"
+      />
+
+      <div className="relative flex items-center justify-between gap-3">
+        <span className="flex items-center gap-2.5 text-sm font-medium text-mist-100">
+          <FileText size={15} className="text-mint-400" />
+          Résumé
+        </span>
+        <span className="rounded-full border border-mist-500/15 px-2 py-0.5 font-mono text-[10px] tracking-[0.14em] text-mist-600 uppercase">
+          PDF
+        </span>
+      </div>
+
+      <div className="relative mt-3.5 aspect-[5/4] overflow-hidden rounded-lg border border-mist-500/10 bg-white">
+        <img
+          src={preview}
+          alt={`First page of ${profile.name}'s résumé`}
+          loading="lazy"
+          decoding="async"
+          className="absolute inset-0 h-full w-full object-cover object-top transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.03]"
+        />
+        <span
+          aria-hidden
+          className="pointer-events-none absolute inset-x-0 bottom-0 h-14 bg-gradient-to-t from-ink-900 via-ink-900/55 to-transparent"
+        />
+      </div>
+
+      <div className="relative mt-3.5 flex items-center justify-between gap-3">
+        <span className="font-mono text-[11px] tracking-wide text-mist-600">
+          {pages} page · Updated {updated}
+        </span>
+        <span className="inline-flex items-center gap-1 text-xs text-mist-400 transition-colors duration-300 group-hover:text-mist-100">
+          Open
+          <ArrowUpRight
+            size={13}
+            className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+          />
+        </span>
+      </div>
+    </a>
+  );
+}
 
 const rise = {
   hidden: { opacity: 0, y: 28 },
@@ -57,9 +114,11 @@ export default function Hero() {
           {profile.tagline[2]}
         </motion.p>
 
+        <div className="mt-9 grid gap-12 lg:grid-cols-12 lg:gap-10">
+          <div className="lg:col-span-7">
         <motion.div
           {...anim(4)}
-          className="mt-9 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-mist-500"
+          className="flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-mist-500"
         >
           <span className="inline-flex items-center gap-2">
             <MapPin size={15} className="text-mist-600" />
@@ -113,7 +172,7 @@ export default function Hero() {
 
         <motion.dl
           {...anim(6)}
-          className="mt-16 grid max-w-2xl grid-cols-2 gap-6 border-t border-mist-500/10 pt-8 sm:grid-cols-3 sm:gap-8"
+          className="mt-14 grid max-w-2xl grid-cols-2 gap-6 border-t border-mist-500/10 pt-8 sm:grid-cols-3 sm:gap-8"
         >
           {stats.map(({ value, label }) => (
             <div key={label}>
@@ -127,6 +186,15 @@ export default function Hero() {
             </div>
           ))}
         </motion.dl>
+          </div>
+
+          <motion.div
+            {...anim(5)}
+            className="max-w-sm lg:col-span-4 lg:col-start-9 lg:max-w-none lg:self-center"
+          >
+            <ResumeCard />
+          </motion.div>
+        </div>
       </div>
 
       <motion.a

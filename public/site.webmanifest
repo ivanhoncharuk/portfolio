@@ -1,0 +1,24 @@
+{
+  "name": "Ivan Honcharuk — Full Stack & AI Developer",
+  "short_name": "Ivan Honcharuk",
+  "description": "Full Stack and AI Developer building web applications, scalable backends and AI-driven products.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "theme_color": "#06060a",
+  "background_color": "#050508",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

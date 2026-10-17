@@ -67,9 +67,13 @@ export default function Nav() {
             href="#top"
             className="group flex items-center gap-2.5 text-sm font-medium tracking-tight text-mist-100"
           >
-            <span className="relative grid h-8 w-8 place-items-center rounded-lg border border-mist-500/15 bg-ink-800 font-serif text-base italic">
-              <span className="text-gradient">ih</span>
-            </span>
+            <img
+              src="/logo-icon.webp"
+              alt=""
+              width="422"
+              height="347"
+              className="h-7 w-auto drop-shadow-[0_0_14px_rgba(80,160,255,0.35)] transition-transform duration-500 group-hover:scale-105"
+            />
             <span className="hidden sm:inline">
               Ivan Honcharuk
               <span className="ml-2 text-mist-600">/ {profile.role.split(" & ")[0]}</span>
