@@ -215,7 +215,7 @@ export default function Work() {
         lead="Five products shipped and live on the web — an AI chatbot platform, a studio site, a Patagonia booking engine, a freight forwarder and a multi-channel conversation agent."
       />
 
-      <div className="space-y-24 md:space-y-32 lg:space-y-40">
+      <div className="space-y-20 md:space-y-24 lg:space-y-28">
         {projects.map((p, i) => (
           <ProjectShowcase
             key={p.title}

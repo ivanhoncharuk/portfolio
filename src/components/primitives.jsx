@@ -22,7 +22,7 @@ export function Section({ id, children, className = "" }) {
   return (
     <section
       id={id}
-      className={`relative mx-auto w-full max-w-6xl scroll-mt-24 px-5 py-20 sm:px-8 md:py-28 lg:py-36 ${className}`}
+      className={`relative mx-auto w-full max-w-6xl scroll-mt-24 px-5 py-14 sm:px-8 sm:py-16 md:py-20 lg:py-24 ${className}`}
     >
       {children}
     </section>
@@ -31,7 +31,7 @@ export function Section({ id, children, className = "" }) {
 
 export function SectionHeading({ index, title, lead }) {
   return (
-    <div className="mb-12 md:mb-16">
+    <div className="mb-10 md:mb-14">
       <Reveal className="flex items-center gap-3">
         <span className="font-mono text-xs tracking-[0.2em] text-mint-400">{index}</span>
         <span className="h-px w-10 bg-gradient-to-r from-mint-400/60 to-transparent" />
