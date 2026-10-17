@@ -13,6 +13,7 @@ export const profile = {
   resume: {
     href: "/resume.pdf",
     preview: "/resume-preview.webp",
+    previewSmall: "/resume-preview-360.webp",
     pages: 1,
     updated: "Oct 2026",
   },

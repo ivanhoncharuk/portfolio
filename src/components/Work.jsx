@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { AnimatePresence, motion, useReducedMotion } from "motion/react";
+import { AnimatePresence, m, useReducedMotion } from "motion/react";
 import { ArrowUpRight, Expand } from "lucide-react";
 import { Reveal, Section, SectionHeading, Tag } from "./primitives";
 import Lightbox from "./Lightbox";
@@ -49,7 +49,7 @@ function Gallery({ project, active, onSelect, onExpand }) {
         >
           <div className="relative aspect-[1500/940] w-full">
             <AnimatePresence initial={false} mode="popLayout">
-              <motion.img
+              <m.img
                 key={image.src}
                 src={image.src}
                 alt={`${project.title} — ${image.caption}`}

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { AnimatePresence, motion, useScroll, useSpring } from "motion/react";
+import { AnimatePresence, m, useScroll, useSpring } from "motion/react";
 import { Menu, X } from "lucide-react";
 import { navLinks, profile } from "../data/content";
 
@@ -65,13 +65,14 @@ export default function Nav() {
         <nav className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between px-5 sm:px-8 md:h-20">
           <a
             href="#top"
+            aria-label={`${profile.name} — back to top`}
             className="group flex items-center gap-2.5 text-sm font-medium tracking-tight text-mist-100"
           >
             <img
               src="/logo-icon.webp"
               alt=""
-              width="422"
-              height="347"
+              width="136"
+              height="112"
               className="h-7 w-auto drop-shadow-[0_0_14px_rgba(80,160,255,0.35)] transition-transform duration-500 group-hover:scale-105"
             />
             <span className="hidden sm:inline">
@@ -90,7 +91,7 @@ export default function Nav() {
                 }`}
               >
                 {active === id && (
-                  <motion.span
+                  <m.span
                     layoutId="nav-pill"
                     className="absolute inset-0 rounded-full border border-mist-500/10 bg-ink-800/80"
                     transition={{ type: "spring", stiffness: 380, damping: 32 }}
@@ -119,7 +120,7 @@ export default function Nav() {
           </button>
         </nav>
 
-        <motion.div
+        <m.div
           style={{ scaleX: progress }}
           className="h-px origin-left bg-gradient-to-r from-iris-500 via-iris-400 to-mint-400"
         />
@@ -127,7 +128,7 @@ export default function Nav() {
 
       <AnimatePresence>
         {open && (
-          <motion.div
+          <m.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -136,7 +137,7 @@ export default function Nav() {
           >
             <div className="flex h-full flex-col justify-center gap-2 px-8">
               {navLinks.map(({ id, label }, i) => (
-                <motion.a
+                <m.a
                   key={id}
                   href={`#${id}`}
                   onClick={() => setOpen(false)}
@@ -149,9 +150,9 @@ export default function Nav() {
                     0{i + 1}
                   </span>
                   {label}
-                </motion.a>
+                </m.a>
               ))}
-              <motion.a
+              <m.a
                 href={`mailto:${profile.email}`}
                 onClick={() => setOpen(false)}
                 initial={{ opacity: 0, y: 12 }}
@@ -160,9 +161,9 @@ export default function Nav() {
                 className="mt-8 rounded-full bg-mist-100 py-3.5 text-center font-medium text-ink-950"
               >
                 {profile.email}
-              </motion.a>
+              </m.a>
             </div>
-          </motion.div>
+          </m.div>
         )}
       </AnimatePresence>
     </>

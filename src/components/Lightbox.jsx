@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
-import { AnimatePresence, motion, useReducedMotion } from "motion/react";
+import { AnimatePresence, m, useReducedMotion } from "motion/react";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 
 /**
@@ -54,7 +54,7 @@ export default function Lightbox({ state, onClose, onNavigate }) {
   return createPortal(
     <AnimatePresence>
       {project && (
-        <motion.div
+        <m.div
           role="dialog"
           aria-modal="true"
           aria-label={`${project.title} screenshots`}
@@ -97,7 +97,7 @@ export default function Lightbox({ state, onClose, onNavigate }) {
               </NavButton>
             )}
 
-            <motion.img
+            <m.img
               key={image.src}
               src={image.src}
               alt={`${project.title} — ${image.caption}`}
@@ -138,7 +138,7 @@ export default function Lightbox({ state, onClose, onNavigate }) {
               ))}
             </div>
           </footer>
-        </motion.div>
+        </m.div>
       )}
     </AnimatePresence>,
     document.body,

@@ -1,9 +1,9 @@
-import { motion, useReducedMotion } from "motion/react";
+import { m, useReducedMotion } from "motion/react";
 
 /** Fades + lifts its children into view once, the first time they're scrolled to. */
 export function Reveal({ children, delay = 0, y = 24, className = "", as = "div" }) {
   const reduced = useReducedMotion();
-  const MotionTag = motion[as] ?? motion.div;
+  const MotionTag = m[as] ?? m.div;
 
   return (
     <MotionTag
