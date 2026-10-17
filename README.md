@@ -31,8 +31,9 @@ Change it there and every section updates:
 - `profile` — name, role, contact details, bio paragraphs
 - `stats` — the three figures under the hero
 - `experience` — roles, bullet points, tech stack
-- `projects` — **placeholders; replace with your real work.** `live` and `repo`
-  are optional, and each card renders without those buttons if they're absent
+- `projects` — the five shipped sites. Each one carries a `domain`, a `live` URL,
+  `highlights`, a `stack` and an `images` array (`{ src, caption }`); the
+  screenshots themselves live in [`public/work/`](public/work)
 - `skills` — the toolkit groups
 - `education` — schools and degrees
 
@@ -53,7 +54,8 @@ src/
 │   ├── Hero.jsx         # hero + tech marquee
 │   ├── About.jsx
 │   ├── Experience.jsx   # timeline + education
-│   ├── Work.jsx         # project cards
+│   ├── Work.jsx         # project showcases + screenshot galleries
+│   ├── Lightbox.jsx     # full-screen screenshot viewer
 │   ├── Skills.jsx
 │   ├── Contact.jsx
 │   ├── Footer.jsx
