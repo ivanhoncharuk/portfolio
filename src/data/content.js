@@ -127,6 +127,30 @@ export const projects = [
     ],
   },
   {
+    title: "Mr. Pet \u00b7 Agente IA",
+    domain: "ManyChat \u00b7 WhatsApp",
+    note: "Private client build \u00b7 Aguascalientes, M\u00e9xico",
+    kind: "WhatsApp AI Agent",
+    description:
+      "An AI sales agent for a premium pet-food store in Aguascalientes, M\u00e9xico, running on WhatsApp around the clock. It asks about the pet before recommending anything, quotes real catalog prices and promotions, and closes the order. Each order then gets its own Mercado Pago payment link for card, OXXO or SPEI. Customers can say they\u2019ve paid in any wording, but the order is only marked paid once Mercado Pago confirms it \u2014 then it is logged to Google Sheets and the team gets an email.",
+    highlights: [
+      "One agent covering advice, ordering, payment collection and payment confirmation",
+      "Strict payment check: one customer\u2019s payment can never confirm another customer\u2019s order",
+      "Human handoff that alerts the team, assigns the chat and silences the bot",
+    ],
+    stack: ["ManyChat", "GPT-4o mini", "Mercado Pago Checkout Pro API", "Google Sheets", "WhatsApp Business API"],
+    accent: "iris",
+    images: [
+      { src: "/work/mrpet-overview.webp", caption: "Overview \u2014 one agent that sells, charges and confirms" },
+      { src: "/work/mrpet-selling.webp", caption: "Consultative selling \u2014 species, age and weight before any product" },
+      { src: "/work/mrpet-checkout.webp", caption: "Checkout \u2014 order confirmed and Mercado Pago link in one message" },
+      { src: "/work/mrpet-payment.webp", caption: "Payment verification \u2014 reads any \u201cI paid\u201d, trusts only Mercado Pago" },
+      { src: "/work/mrpet-flow.webp", caption: "Flow logic \u2014 the ManyChat decision tree behind every message" },
+      { src: "/work/mrpet-orderlog.webp", caption: "Order log \u2014 every order a row, every payment reflected" },
+      { src: "/work/mrpet-handoff.webp", caption: "Team alerts \u2014 the bot steps aside once a human takes over" },
+    ],
+  },
+  {
     title: "Vamos Calafate",
     domain: "vamoscalafate.com",
     live: "https://vamoscalafate.com",
@@ -139,7 +163,7 @@ export const projects = [
       "A travel guide and destination library that feeds the catalogue",
     ],
     stack: ["Next.js", "React", "Server rendering", "ISR caching", "Nginx"],
-    accent: "iris",
+    accent: "mint",
     images: [
       { src: "/work/vamoscalafate-hero.webp", caption: "Home \u2014 hero carousel over the experience search" },
       { src: "/work/vamoscalafate-tours.webp", caption: "Catalogue \u2014 excursions filtered by category and effort" },
@@ -162,7 +186,7 @@ export const projects = [
       "Quote requests routed to one dedicated account executive per shipment",
     ],
     stack: ["TanStack Start", "React", "Vite", "Tailwind CSS", "Netlify"],
-    accent: "mint",
+    accent: "iris",
     images: [
       { src: "/work/ikrol-hero.webp", caption: "Home \u2014 \u201cConectamos lo que mueve al mundo\u201d" },
       { src: "/work/ikrol-services.webp", caption: "Services \u2014 every mode of moving cargo" },
@@ -185,7 +209,7 @@ export const projects = [
       "GDPR-native positioning, with EU hosting and security made explicit",
     ],
     stack: ["Astro", "Islands architecture", "Tailwind CSS", "i18n", "Nginx"],
-    accent: "iris",
+    accent: "mint",
     images: [
       { src: "/work/comhub-hero.webp", caption: "Home \u2014 one AI for every customer conversation" },
       { src: "/work/comhub-channels.webp", caption: "Channels \u2014 WhatsApp, RCS, SMS, email and web widget" },

@@ -145,15 +145,19 @@ function ProjectShowcase({ project, index, onExpand }) {
               {project.title}
             </h3>
 
-            <a
-              href={project.live}
-              target="_blank"
-              rel="noreferrer noopener"
-              className="mt-2.5 inline-flex items-center gap-1.5 font-mono text-[12px] text-mist-500 transition-colors hover:text-mist-100"
-            >
-              {project.domain}
-              <ArrowUpRight size={13} />
-            </a>
+            {project.live ? (
+              <a
+                href={project.live}
+                target="_blank"
+                rel="noreferrer noopener"
+                className="mt-2.5 inline-flex items-center gap-1.5 font-mono text-[12px] text-mist-500 transition-colors hover:text-mist-100"
+              >
+                {project.domain}
+                <ArrowUpRight size={13} />
+              </a>
+            ) : (
+              <p className="mt-2.5 font-mono text-[12px] text-mist-500">{project.note}</p>
+            )}
 
             <p className="mt-5 text-sm leading-relaxed text-mist-500 md:text-[0.95rem]">
               {project.description}
@@ -177,15 +181,17 @@ function ProjectShowcase({ project, index, onExpand }) {
               ))}
             </div>
 
-            <a
-              href={project.live}
-              target="_blank"
-              rel="noreferrer noopener"
-              className="mt-8 inline-flex items-center gap-2 rounded-full border border-mist-500/18 bg-ink-800/60 px-5 py-2.5 text-sm text-mist-300 transition-all duration-300 hover:-translate-y-0.5 hover:border-mist-500/35 hover:text-mist-100"
-            >
-              Visit the live site
-              <ArrowUpRight size={15} />
-            </a>
+            {project.live && (
+              <a
+                href={project.live}
+                target="_blank"
+                rel="noreferrer noopener"
+                className="mt-8 inline-flex items-center gap-2 rounded-full border border-mist-500/18 bg-ink-800/60 px-5 py-2.5 text-sm text-mist-300 transition-all duration-300 hover:-translate-y-0.5 hover:border-mist-500/35 hover:text-mist-100"
+              >
+                Visit the live site
+                <ArrowUpRight size={15} />
+              </a>
+            )}
           </Reveal>
         </div>
 
@@ -212,7 +218,7 @@ export default function Work() {
       <SectionHeading
         index="03"
         title="Selected work"
-        lead="Five products shipped and live on the web — an AI chatbot platform, a studio site, a Patagonia booking engine, a freight forwarder and a multi-channel conversation agent."
+        lead="Six products shipped and in daily use — an AI chatbot platform, a studio site, a WhatsApp sales agent, a Patagonia booking engine, a freight forwarder and a multi-channel conversation agent."
       />
 
       <div className="space-y-20 md:space-y-24 lg:space-y-28">
